@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation"
+    app:startDestination="@id/fragment_items">
+
+    <fragment
+        android:id="@+id/fragment_items"
+        android:name="com.vjet.slambook.ui.ItemsFragment"
+        android:label="Slam Book">
+        <action
+            android:id="@+id/action_items_to_edit"
+            app:destination="@id/fragment_edit" />
+        <action
+            android:id="@+id/action_items_to_selected"
+            app:destination="@id/fragment_selected" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_selected"
+        android:name="com.vjet.slambook.ui.SelectedFragment"
+        android:label="{fullName}">
+        <argument
+            android:name="fullName"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_selected_to_edit"
+            app:destination="@id/fragment_edit" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_edit"
+        android:name="com.vjet.slambook.ui.EditFragment"
+        android:label="{action}">
+        <argument
+            android:name="action"
+            android:defaultValue="Create"
+            app:argType="string" />
+    </fragment>
+
+</navigation>

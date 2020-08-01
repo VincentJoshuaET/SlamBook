@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Slam Book</string>
+    <string name="btn_create">Create</string>
+    <string name="btn_save">Save</string>
+    <string name="btn_edit">Edit</string>
+    <string name="txt_full_name">What is your full name?</string>
+    <string name="txt_nickname">What do you like to be called as?</string>
+    <string name="txt_address">Where do you live?</string>
+    <string name="txt_mobile">What is your mobile number?</string>
+    <string name="txt_email">What is your email address?</string>
+    <string name="txt_gender">What is your gender?</string>
+    <string name="txt_birthday">When is your birthday?</string>
+    <string name="txt_age">How old are you?</string>
+    <string name="txt_occupation">What do you do for a living?</string>
+    <string name="txt_language">What languages can you speak with?</string>
+    <string name="txt_color">What is your favorite color?</string>
+    <string name="txt_musician">Who/what are your favorite singers/bands?</string>
+    <string name="txt_movie">What are your favorite movies?</string>
+    <string name="txt_tv_show">What are your favorite TV shows?</string>
+    <string name="txt_actor">Who are your favorite actors/actresses?</string>
+    <string name="txt_book">What are your favorite books?</string>
+    <string name="txt_author">Who are your favorite authors?</string>
+    <string name="txt_game">What games/sports do you play?</string>
+    <string name="txt_food">What are your favorite food/drink?</string>
+    <string name="txt_place">Where do you want to travel?</string>
+</resources>
