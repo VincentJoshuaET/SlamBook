@@ -50,13 +50,6 @@ android {
         isCheckDependencies = true
         isCheckGeneratedSources = true
     }
-
-    splits {
-        abi {
-            isEnable = true
-            isUniversalApk = true
-        }
-    }
 }
 
 dependencies {
