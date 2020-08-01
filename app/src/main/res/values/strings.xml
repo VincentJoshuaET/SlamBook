@@ -3,6 +3,7 @@
     <string name="btn_create">Create</string>
     <string name="btn_save">Save</string>
     <string name="btn_edit">Edit</string>
+    <string name="btn_delete">Delete</string>
     <string name="txt_full_name">What is your full name?</string>
     <string name="txt_nickname">What do you like to be called as?</string>
     <string name="txt_address">Where do you live?</string>

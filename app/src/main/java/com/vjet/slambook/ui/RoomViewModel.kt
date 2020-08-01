@@ -1,7 +1,10 @@
 package com.vjet.slambook.ui
 
 import androidx.hilt.lifecycle.ViewModelInject
-import androidx.lifecycle.*
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.cachedIn
@@ -29,6 +32,11 @@ class RoomViewModel @ViewModelInject constructor(private val repo: ItemRepositor
         viewModelScope.launch(Dispatchers.IO) {
             repo.updateItem(item)
             _item.postValue(item)
+        }
+
+    fun deleteItem(item: Item) =
+        viewModelScope.launch(Dispatchers.IO) {
+            repo.deleteItem(item)
         }
 
     fun setItem(item: Item) {

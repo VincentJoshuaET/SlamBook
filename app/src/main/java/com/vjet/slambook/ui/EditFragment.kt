@@ -18,7 +18,6 @@ import com.vjet.slambook.databinding.FragmentEditBinding
 import com.vjet.slambook.util.*
 import dagger.hilt.android.AndroidEntryPoint
 import java.time.Instant
-import java.time.LocalDate
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter
 import java.util.*
@@ -41,12 +40,13 @@ class EditFragment : Fragment(R.layout.fragment_edit) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val activity = requireActivity() as MainActivity
         val context = requireContext()
+        val toolbar = activity.toolbar
 
         val formatter =
             DateTimeFormatter.ofPattern("MMMM d, yyyy").withZone(ZoneId.systemDefault())
-        var birthday =
-            LocalDate.now().atStartOfDay(ZoneId.systemDefault()).toInstant().toEpochMilli()
+        var birthday = Instant.now().toEpochMilli()
 
         val r = Random
         var card = Color.argb(255, r.nextInt(256), r.nextInt(256), r.nextInt(256))
@@ -127,6 +127,17 @@ class EditFragment : Fragment(R.layout.fragment_edit) {
                         updated.id = item.id
                         viewModel.updateItem(updated)
                         findNavController().popBackStack()
+                    }
+
+                    toolbar.setOnMenuItemClickListener { menu ->
+                        when (menu.itemId) {
+                            R.id.item_delete -> {
+                                viewModel.deleteItem(item)
+                                findNavController().popBackStack(R.id.fragment_items, false)
+                                return@setOnMenuItemClickListener true
+                            }
+                            else -> return@setOnMenuItemClickListener false
+                        }
                     }
                 }
             } else {
@@ -226,6 +237,5 @@ class EditFragment : Fragment(R.layout.fragment_edit) {
                 card
             )
         }
-
 
 }
