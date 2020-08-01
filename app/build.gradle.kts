@@ -64,7 +64,7 @@ dependencies {
 
     // Kotlin / Java
     implementation(kotlin("stdlib-jdk7", "1.3.72"))
-    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:1.0.10")
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:1.0.11")
 
     // Android Architecture Components
     implementation("androidx.activity:activity-ktx:1.1.0")
